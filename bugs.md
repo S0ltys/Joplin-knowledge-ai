@@ -1,0 +1,1 @@
+Bug 1: Semantic search returns irrelevant results for short queries
