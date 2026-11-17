@@ -1,0 +1,21 @@
+name: Joplin Knowledge AI CI
+run-name: ${{ github.actor }} запускає CI для note_search
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Встановити Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Встановити залежності
+        run: pip install -r requirements.txt
+
+      - name: Запустити тести
+        run: python3 -m pytest -v
